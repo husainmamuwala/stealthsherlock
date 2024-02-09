@@ -1,0 +1,9 @@
+export FLASK_APP="api"
+export FLASK_ENV="production"
+
+SECRET_KEY="mars"
+
+MAIL_USERNAME="Husain"
+MAIL_PASSWORD="<Enter Mail App Password />"
+MAIL_SERVER="<Enter Mail Server />"
+MAIL_PORT="<Enter Mail Port Number />"
