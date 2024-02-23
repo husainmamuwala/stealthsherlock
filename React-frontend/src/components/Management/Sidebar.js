@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       fontWeight: '600',
       fontSize: theme.spacing(1.2),
-      color: '#fff',
+      color: '#fff',  
       position: 'absolute',
       top: theme.spacing(5.2),
       left: theme.spacing(5),
@@ -113,8 +113,7 @@ function Sidebar() {
   // Other items
   const otherItems = [
                       ['Home', <HomeIcon color="secondary"/>, "/"],
-                      ['Contact', <ContactSupportIcon color="secondary"/>, "/contact"],
-                      ['About', <InfoIcon color="secondary"/>, "/about"]
+                      
                     ]
 
   return (
@@ -150,12 +149,12 @@ function Sidebar() {
             }
           </Typography>
 
-          <Typography className={classes.profileText}>
+          {/* <Typography className={classes.profileText}>
             {(auth.user && !auth.isLoading) ?
               (<VerifyButton />) :
               (<span>wait...</span>)
             }
-          </Typography>
+          </Typography> */}
         </ListItem>
       </List>
 

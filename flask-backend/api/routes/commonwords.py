@@ -259,7 +259,7 @@ def most_common(case_one, case_two):
 def commonwordlist(case1, case2):
 
     try:
-
+        print("HAHAHAHAHAHA")
         req = request.get_json()
 
         case_one_from_json = str(req['case1'])

@@ -133,7 +133,7 @@ const AboutPage = () => {
                                 variant="body2"
                                 className={classes.textBody}
                             >
-                                OpenMF is an open source forensic tool for Android
+                                Stealth Sherlock is an open source forensic tool for Android
                                 smartphones that helps digital forensic investigators
                                 throughout the life cycle of digital forensic investigation.
                             </Typography>
@@ -155,7 +155,7 @@ const AboutPage = () => {
                         </div>
                         <div className={classes.rightInner}>
                             <Typography component="h1" variant="body1" className={classes.title}>
-                                How OpenMF Works ?
+                                How StealthSherlock Works ?
                             </Typography>
                             <Typography component="h6" variant="body2" className={classes.textBody}>
                                 Login as either Admin, Management or Extractor based on your puspose.

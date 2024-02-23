@@ -148,7 +148,7 @@ function HomeLogo() {
         
           {(auth && !auth.isAuthenticated) && (
         <Grid item xs={12} sm={12} md={4} className={classes.left}>
-          <img src='/img/sherlock4.svg' alt="openMF" className={classes.logo} />
+          <img src='/img/sherlock4.svg' alt="Stealth Sherlock" className={classes.logo} />
             <div>
               <Button className="bg-red" variant="contained" onClick={handleOpenLogin} color="primary">
                 Login

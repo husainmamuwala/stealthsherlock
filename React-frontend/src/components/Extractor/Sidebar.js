@@ -15,6 +15,7 @@ import {
   ListItemIcon
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import GppMaybeIcon from '@mui/icons-material/GppMaybe';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import AssignmentIcon from '@material-ui/icons/Assignment';
@@ -94,6 +95,9 @@ function Sidebar() {
   const caseManagementItems = [
                                 ['Live Devices', <DevicesIcon color="secondary"/>, "/live-devices"],
                                 ['Case Gallery', <WidgetsIcon color="secondary"/>, "/extracted-cases"],
+                                ['Malware Analysis', <GppMaybeIcon color="secondary"/>, "/malware-analysis"],
+
+
                               ]
 
   // Task Management related list items(For Admin)

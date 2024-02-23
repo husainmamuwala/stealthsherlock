@@ -12,9 +12,11 @@ import Malwarepage from './components/Malwarepage';
 import { loadUser } from './store/actions/auth';
 import MemberList from './pages/admin/MemberList';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Malwareanalysis from './pages/Extractor/Malwareanalysis';
 import NotFound from './pages/NotFound';
 import SelectedMember from './pages/admin/SelectedMember';
 import CreateTask from './pages/admin/CreateTask';
+import Malware from './components/Extractor/Malware';
 import ShowTasks from './pages/admin/ShowTasks';
 import CaseTreePage from './pages/Management/CaseTreePage';
 import FileExplorerPage from './pages/Management/FileExplorerPage';
@@ -57,7 +59,7 @@ function PrivateRoute ({component: Component, ...rest}) {
       if(auth.isLoading){
         return <CircularProgress style={{ margin: '50vh 50vw' }} />
       } else if(!auth.isAuthenticated){
-        return <Redirect to="/admin"/>
+        return <Redirect to="/"/>
       } else {
         return <Component {...props}/>
       }
@@ -75,7 +77,7 @@ function PublicRoute ({ component: Component, restricted, ...rest }) {
   return <Route {...rest} render={props => {
     
     if (auth.isAuthenticated && restricted) {
-      return <Redirect to="/admin" />
+      return <Redirect to="/" />
     } else {
       return <Component {...props} />
     }
@@ -120,10 +122,10 @@ function App() {
           <PrivateRoute path='/compare' exact component={ComparePage} />
           <PrivateRoute path='/search-user' exact component={SearchUser} />
           <PrivateRoute path='/search-user' exact component={Malwarepage} />
+          <PrivateRoute path='/malware-analysis' exact component={Malwareanalysis} />
+          <PrivateRoute path='/malware/file' exact component={Malware} />
           <PublicRoute restricted={false} component={AdminPage} />
         </Switch>
-
-      
 
       </div>
   );

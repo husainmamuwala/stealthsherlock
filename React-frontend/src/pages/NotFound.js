@@ -35,7 +35,7 @@ function NotFound () {
 
   // useEffect to change title
   useEffect(() => {
-    document.title = 'Not Found - OpenMF '
+    document.title = 'Not Found '
   })
 
   // Main return statement

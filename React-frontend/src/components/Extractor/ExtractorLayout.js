@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 // Display main content of layout
-export default function ExtractorLayout ({ children, sidebarBool=true, background=true}) {
+export default function ExtractorLayout ({ children, sidebarBool=true}) {
 
     // Invoking custom styeles
     const classes = useStyles()

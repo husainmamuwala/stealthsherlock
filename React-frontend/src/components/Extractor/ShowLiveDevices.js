@@ -104,7 +104,7 @@ function ShowLiveDevices() {
 
             </Box>
 
-            <Divider style={{width: '100%', marginTop: '1em'}}/>
+            <Divider style={{width: '100%', marginTop: '1rem'}}/>
 
             {
                 // Showing Linear Progression

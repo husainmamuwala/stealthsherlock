@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         marginTop: theme.spacing(1),
+        display:'flex',
         '&:focus': {
             outline: 'none'
         }
@@ -80,7 +81,9 @@ function DeviceCard({ serial, model, deviceCodeName, transportID, isLoading, tog
                 (isLoading) ? (
                     <DeviceUnknownIcon className={classes.largeIcon}/>
                 ) : (
-                    <PhoneLinkSetupIcon className={classes.largeIcon} />
+                    <img
+                    src='/img/phone.svg'
+                    style={{height:'10rem', paddingBottom:'10px'}}/>
                 )
             }
             {
@@ -92,20 +95,19 @@ function DeviceCard({ serial, model, deviceCodeName, transportID, isLoading, tog
                         <Tooltip title="Device Model">
 
                             <Typography className={classes.title}>
-                                <svg width="16px" height="16px" style={{marginRight: '.5em'}}>
+                                <svg width="20px" height="20px" style={{marginRight: '.5em'}}>
+                                    <p>Live</p>
                                     <g color='green'>
                                         <circle
-                                            cx="8px"
-                                            cy="8px"
+                                            cx="10px"
+                                            cy="10px"
                                             r="5"
                                             stroke='currentcolor'
                                             fill='currentcolor'
                                         />
                                     </g>
                                 </svg>
-
                                 {model}
-
                             </Typography>
                         </Tooltip>
 
@@ -134,6 +136,7 @@ function DeviceCard({ serial, model, deviceCodeName, transportID, isLoading, tog
                         disabled={isLoading}
                         color="secondary"
                         variant="outlined"
+                        style={{borderRadius:"20px"}}
                         onClick={() => handleClick()}
                         >Extract Data
                     </Button>

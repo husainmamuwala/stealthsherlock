@@ -1,7 +1,3 @@
-"""
-Class defintion for Case Model.
-"""
-
 
 # Importing Dependecies
 from api.extansions import db

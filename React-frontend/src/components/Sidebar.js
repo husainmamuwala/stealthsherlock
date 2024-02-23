@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
   activeItem: {
     backgroundColor: '#f6f6f6',
     borderRadius: '20px',
+    color:"red"
 
   }
 }))
