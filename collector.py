@@ -103,6 +103,59 @@ def save_report(session_name, tags):
     return write_to_file(file_path, REPORT)
 
 
+# if __name__ == '__main__':
+#     args = sys.argv
+#     args_set = set(args)
+#     print(HELP_KEYS)
+#     if HELP_KEYS & args_set:
+#         print(help_str)
+#         sys.exit()
+#     elif REPORT_GEN_KEYS & args_set:
+#         session_name = args[2]
+#         if generate_pdf_report(session_name):
+#             print('Generated report as a PDF successfully for case :: ' + session_name)
+#         else:
+#             print('Unable to generate PDF report for case :: ' + session_name)
+#     elif len(OPTION_KEYS & args_set) > 0 and len(SESSION_KEYS & args_set) > 0:
+#         print('Starting data extraction plan for given options')
+#         arg_iter = iter(args)
+#         file_name = next(arg_iter)
+
+#         first_flag = next(arg_iter)
+#         options = []
+#         tags = []
+#         session_name = ''
+#         if OPTION_KEYS.__contains__(first_flag):
+#             print('Running data extraction for selected options : ')
+#             option = ''
+#             while not option.__contains__('-'):
+#                 if option != '':
+#                     options.append(option)
+#                 option = next(arg_iter)
+
+#             if SESSION_KEYS.__contains__(option):
+#                 session_name = next(arg_iter)
+#                 option = next(arg_iter)
+#             if CASE_TAG.__contains__(option):
+#                 tags.extend(next(arg_iter).split(','))
+#         else:
+#             print('Incorrectly options are provided, correct way is : ')
+#             print('collector.py -o facebook whatsapp phone -sn case_007_james-bond')
+#             sys.exit()
+#         if options.__contains__('all'):
+#             print('Extracting all common databases ...')
+#             extract_all_data(session_name)
+#             print('databases extraction completed...')
+#         else:
+#             collect_data(options, session_name, tags)
+#         if save_report(session_name, tags):
+#             print('Saved report successfully')
+#         else:
+#             print('Unable to save report file')
+#     else:
+#         print('Invalid / Not Sufficient options provided')
+#         print(help_str)
+#         sys.exit()
 if __name__ == '__main__':
     args = sys.argv
     args_set = set(args)
@@ -128,14 +181,19 @@ if __name__ == '__main__':
         if OPTION_KEYS.__contains__(first_flag):
             print('Running data extraction for selected options : ')
             option = ''
-            while not option.__contains__('-'):
-                if option != '':
-                    options.append(option)
-                option = next(arg_iter)
+            while True:
+                try:
+                    if option != '':
+                        options.append(option)
+                    option = next(arg_iter)
+                    if option.startswith('-'):
+                        break
+                except StopIteration:
+                    break
 
             if SESSION_KEYS.__contains__(option):
                 session_name = next(arg_iter)
-                option = next(arg_iter)
+                # option = next(arg_iter)
             if CASE_TAG.__contains__(option):
                 tags.extend(next(arg_iter).split(','))
         else:

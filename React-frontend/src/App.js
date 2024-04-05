@@ -124,7 +124,7 @@ function App() {
           <PrivateRoute path='/search-user' exact component={Malwarepage} />
           <PrivateRoute path='/malware-analysis' exact component={Malwareanalysis} />
           <PrivateRoute path='/malware/file' exact component={Malware} />
-          <PublicRoute restricted={false} component={AdminPage} />
+          <PublicRoute restricted={false} component={NotFound} />
         </Switch>
 
       </div>
