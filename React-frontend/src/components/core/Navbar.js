@@ -97,7 +97,7 @@ export function Header() {
   return (
     <Toolbar className={classes.toolbar}>
       <Typography variant="h6" component={RouterLink} to="/" className={classes.title}>
-        Stealth Sherlock
+        MARS - A Comprehensive Digital Forensics Toolkit  
       </Typography>
       <div>
         {auth.isAuthenticated ? (
